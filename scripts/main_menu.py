@@ -1,7 +1,7 @@
 from bge import logic
 
 scene = logic.getCurrentScene()
-AVATARS = ['AvatarJimbo' , 'AvatarJenifer' , 'AvatarManiek' , 'AvatarErika']
+AVATARS = ['AvatarManiek' , 'AvatarJenifer' , 'AvatarJimbo' , 'AvatarErika' , 'AvatarChuck']
 
 avatarVisibleIndex = 0
 
@@ -14,7 +14,7 @@ def playActions():
     for avatar in avatars[:-1]:
         avatar.endObject()
     
-    avatar = avatars[0]
+    avatar = avatars[ 0 ]
     avatar.playAction( 'maniek_menu' , 0 ,507 , play_mode=1 )
     evee = scene.objects['evee_skeleton']
     evee.playAction( 'evee_menu' , 0 ,507 , play_mode=1 )

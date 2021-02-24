@@ -17,7 +17,8 @@ def main():
         "mainMenu":[    'nature' , 
                         'avatars_maniek' , 
                         'avatars_jenifer',
-                        'avatars_erika',  
+                        'avatars_erika',
+                        'avatars_chuck',  
                         'avatars_jimbo',
                         'industrial', 
                         'evee'
