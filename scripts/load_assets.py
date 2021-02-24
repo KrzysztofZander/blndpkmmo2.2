@@ -23,6 +23,7 @@ def main():
                         'avatars_mia',
                         'avatars_frankie',
                         'avatars_jasmina',
+                        'avatars_mubutu',
                         'industrial', 
                         'evee'
                     ]
