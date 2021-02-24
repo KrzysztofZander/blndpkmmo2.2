@@ -2,8 +2,8 @@ from bge import logic, types, events, constraints
 import random
 import os
 import aud
-from pokemon import Bulbasaur , Squirtle , Scyther , Charmander , Jigglypuff , Charizard , Psyduck , Cubone , Meow
-from pokemon import Mewtwo , Pikachu , Charmeleon , Wartortle , Blastoise , Ivysaur , Venusaur , Oddish
+from pokemons import Bulbasaur , Squirtle , Scyther , Charmander , Jigglypuff , Charizard , Psyduck , Cubone , Meow
+from pokemons import Mewtwo , Pikachu , Charmeleon , Wartortle , Blastoise , Ivysaur , Venusaur , Oddish
 
 scene = logic.getCurrentScene()
 
