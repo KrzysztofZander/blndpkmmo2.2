@@ -1,7 +1,7 @@
 from bge import logic
 
 scene = logic.getCurrentScene()
-AVATARS = ['AvatarManiek' , 'AvatarJenifer']
+AVATARS = ['AvatarJimbo' , 'AvatarJenifer' , 'AvatarManiek' , 'AvatarErika']
 
 avatarVisibleIndex = 0
 
@@ -11,11 +11,11 @@ def playActions():
 
     avatars = [ x for x in scene.objects if 'Avatar' in str(x) ]
 
-    for avatar in avatars:
-        avatar.suspendDynamics()
-        avatar.playAction( 'maniek_menu' , 0 ,507 , play_mode=1 )
-
-    avatars[ avatarVisibleIndex ].setVisible(True, True)
+    for avatar in avatars[:-1]:
+        avatar.endObject()
+    
+    avatar = avatars[0]
+    avatar.playAction( 'maniek_menu' , 0 ,507 , play_mode=1 )
     evee = scene.objects['evee_skeleton']
     evee.playAction( 'evee_menu' , 0 ,507 , play_mode=1 )
 
@@ -33,12 +33,24 @@ def update_visible_avatar( ):
     global avatarVisibleIndex
     index = int(avatarVisibleIndex)
     scene = logic.getCurrentScene()
-    avatars = [ x for x in scene.objects if 'Avatar' in str(x) ]
-    for avatar in avatars:
-        avatar.setVisible(False, True)
+    
+    try:
+        newAvatarName = AVATARS[index]
+        print( newAvatarName )
+        currentAvatar = [ x for x in scene.objects if 'Avatar' in str(x) ][0]
 
-    try:    
-        avatars[ index ].setVisible(True, True)
-    except :
+        position = currentAvatar.localPosition
+        orientation = currentAvatar.localOrientation
+        frame = currentAvatar.getActionFrame()
+        
+        currentAvatar.endObject()
+        
+        newAvatar = scene.addObject( newAvatarName )
+        newAvatar.worldPosition[2] = 4
+        newAvatar.localOrientation = orientation
+        newAvatar.playAction( 'maniek_menu' , 0 ,507 , play_mode=1 )
+        newAvatar.setActionFrame(frame)
+    except Exception as e:
+        print(e)
         avatarVisibleIndex = 0
-        update_visible_avatar( )
+        update_visible_avatar()

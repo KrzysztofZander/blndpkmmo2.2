@@ -17,5 +17,6 @@ def replace():
             print('object ' , item , ' wont replaced')
     
 
-
+    message = scene.name+'_replaced_assets'
+    logic.sendMessage( message )
 
