@@ -14,7 +14,7 @@ def main():
 
     scene = logic.getCurrentScene()
     filesNeedToScene = {
-        "mainMenu":[ 'nature' , 'avatars' , 'industrial' , 'evee' ]
+        "mainMenu":[ 'nature' , 'avatars_maniek' , 'industrial' , 'evee' ]
     }
 
     for files in filesNeedToScene[ scene.name ]:
