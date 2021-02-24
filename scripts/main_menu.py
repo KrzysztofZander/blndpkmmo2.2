@@ -1,7 +1,7 @@
 from bge import logic
 
 scene = logic.getCurrentScene()
-AVATARS = ['AvatarManiek' , 'AvatarJenifer' , 'AvatarJimbo' , 'AvatarErika' , 'AvatarChuck']
+AVATARS = ['AvatarManiek' , 'AvatarJenifer' , 'AvatarJimbo' , 'AvatarErika' , 'AvatarChuck' , 'AvatarMia']
 
 avatarVisibleIndex = 0
 

@@ -20,6 +20,7 @@ def main():
                         'avatars_erika',
                         'avatars_chuck',  
                         'avatars_jimbo',
+                        'avatars_mia',
                         'industrial', 
                         'evee'
                     ]
