@@ -21,9 +21,24 @@ def playActions():
 
     # avatar_animation.setParent(avatar)
 
-def change_avatar():
+def next_avatar():
     global avatarVisibleIndex
+    # Bge calls bnt twice , this is walkaround
+    # each call has 0.5 value , so double click == 1
+    
     avatarVisibleIndex+=0.5
+
+    if avatarVisibleIndex % 1 == 0:
+        update_visible_avatar( )
+
+def prev_avatar():
+    global avatarVisibleIndex
+
+    # Bge calls bnt twice , this is walkaround
+    # each call has 0.5 value , so double click == 1
+    avatarVisibleIndex-=0.5
+
+    print( avatarVisibleIndex )
 
     if avatarVisibleIndex % 1 == 0:
         update_visible_avatar( )
